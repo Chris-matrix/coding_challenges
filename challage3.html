@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Objects</title>
+</head>
+<body>
+  <section id="app"></section>
+
+  <h1>Liftoff emails</h1>
+  <div id="u-profile" class="user-profile-card"></div>
+
+  <style>
+    .user-profile-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      background-color: #f9f9f9;
+    }
+
+    .user-profile-card p {
+      margin: 5px 0;
+    }
+  </style>
+
+  <script src="data.js"></script>
+  <script>
+    const userProfileElement = document.getElementById("u-profile");
+    const emails = [];
+    const names = [];
+
+    if (Liftoff) { // Check if Liftoff exists before iterating
+      Liftoff.forEach(profile => {
+        names.push(profile.name);
+        emails.push(profile.email);
+
+        const nameDiv = document.createElement("div");
+        const nameP1 = document.createElement("p");
+        const nameP2 = document.createElement("p");
+        nameP1.textContent = `Name: ${profile.name}`;
+        nameP2.textContent = `Email: ${profile.email}`;
+
+        nameDiv.appendChild(nameP1);
+        nameDiv.appendChild(nameP2);
+        userProfileElement.appendChild(nameDiv);
+      });
+    } else {
+      console.error("Liftoff data not found!")};
+  </script>
+</body>
+</html>

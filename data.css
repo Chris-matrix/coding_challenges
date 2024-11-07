@@ -1,0 +1,11 @@
+.user-profile-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+}
+
+.user-profile-card p {
+    margin: 5px 0;
+}
