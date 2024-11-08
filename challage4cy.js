@@ -3,31 +3,30 @@ function printcybersecurityData(data) {
         console.log(`Level: ${data[i].level}`);
         console.log(`Job Openings: ${data[i].jobOpenings}`);
         console.log(`Available Talent: ${data[i].availableTalent}`);
-        }
+    }
 }
-
 
 let talentData = [];
 
 let entryLevel = {
-level: "Entry Level",
-jobOpenings:0,
-avaiableTalents:0
+    level: "Entry Level",
+    jobOpenings: 0,
+    availableTalent: 0
 };
 
 let midLevel = {
     level: "Mid Level",
-    jobOpenings:0,
-    avaiableTalents:0
+    jobOpenings: 0,
+    availableTalent: 0
 };
 
 let seniorLevel = {
     level: "Senior Level",
-    jobOpenings:0,
-    avaiableTalents:0
+    jobOpenings: 0,
+    availableTalent: 0
 };
 
-talentData.push(entryLevel,midLevel,seniorLevel);
+talentData.push(entryLevel, midLevel, seniorLevel);
 
 talentData[0].jobOpenings = 50;
 talentData[0].availableTalent = 200;
@@ -39,14 +38,14 @@ talentData[2].jobOpenings = 20;
 talentData[2].availableTalent = 100;
 
 console.log(talentData);
-function calculateTotalgap(talentData) {
+
+function calculateTotalGap(talentData) {
     let totalGap = 0;
     for (let i = 0; i < talentData.length; i++) {
-        totalGap += talentData[i].availableTalent;
+        totalGap += talentData[i].jobOpenings;
     }
-    return console.log(${"There is a combined total of "+ totalGap.toString() + "open for cyber security roles."}
-};
-calculateTotalgap(talentData);
+    console.log(`There is a combined total of ${totalGap} openings for cyber security roles.`);
+}
 
 function findLargestOpenings(talentData) {
     let largestOpenings = 0;
@@ -57,5 +56,10 @@ function findLargestOpenings(talentData) {
             largestLevel = talentData[i].level;
         }
     }
-    return console.log(${"The largest number of job openings is "+ largestOpenings.toString() +" at the "+ largestLevel +" level."}
-};
+    console.log(`The largest number of job openings is ${largestOpenings} at the ${largestLevel} level.`);
+}
+
+// Call the functions to display the output
+printcybersecurityData(talentData);
+calculateTotalGap(talentData);
+findLargestOpenings(talentData);

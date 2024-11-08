@@ -1,0 +1,16 @@
+{
+
+    "version": "0.1.0",
+    "command": "node",
+    "isShellCommand": true,
+    "args": ["${file}"],
+    "showOutput": "always"
+    }
+    [
+        {   "key": "ctrl+r",
+        "command": "workbench.action.tasks.runTask"
+        },
+        {   "key": "ctrl+e",
+        "command": "workbench.action.output.toggleOutput"
+        }
+        ]
